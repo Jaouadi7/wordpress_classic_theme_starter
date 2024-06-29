@@ -1,13 +1,13 @@
 require("dotenv").config();
 const browserSync = require("browser-sync").create();
 const php = require("gulp-connect-php");
-const paths = require("./paths.cjs"); // Ensure this path is correct
+const paths = require("./paths.cjs");
 
 // SERVER OPTIONS
 const options = {
   port: process.env.PORT || 5000,
-  base: paths.production || "./", // Ensure paths.production is set correctly
-  root: paths.root || "./", // Ensure paths.root is set correctly
+  base: paths.production || "./",
+  root: paths.root || "./",
 };
 
 // RELOAD BROWSER

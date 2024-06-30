@@ -1,39 +1,44 @@
+// LOAD .ENV VARIABLES
 require("dotenv").config();
-const browserSync = require("browser-sync").create();
-const php = require("gulp-connect-php");
+
+// SERVER PLUGINS
+const browserSync = require("browser-sync");
+const connect = require("gulp-connect-php");
+
+// GET PATHS VARIABLES
 const paths = require("./paths.cjs");
 
 // SERVER OPTIONS
 const options = {
-  port: process.env.PORT || 5000,
-  base: paths.production || "./",
   root: paths.root || "./",
 };
 
 // RELOAD BROWSER
-function reload() {
+function reloadBrowser(done) {
   browserSync.reload();
+
+  done();
 }
 
 // SETUP DEV SERVER FOR STATIC FRONTEND ASSETS
-function startServer(cb) {
+function startServer(done) {
   // USING GULP-CONNECT-PHP PLUGIN
-  php.server({
-    base: options.root,
-    port: options.port,
-    keepalive: true,
-    stdio: "ignore",
-    bin: process.env.PHP_BIN,
-    ini: process.env.PHP_INI,
-  });
+  connect.server(
+    {
+      // SERVER OPTIONS
+      base: options.root,
+      stdio: "ignore",
+      bin: process.env.PHP_BIN,
+    },
+    function () {
+      // USING BROWSERSYNC PLUGIN
+      browserSync({
+        proxy: "127.0.0.1:8000",
+      });
+    },
+  );
 
-  // USING BROWSERSYNC PLUGIN
-  browserSync.init({
-    base: options.root,
-    proxy: `127.0.0.1:${options.port || 5000}`,
-    port: 3000,
-  });
-  cb();
+  done();
 }
 
-module.exports = { startServer, reload };
+module.exports = { startServer, reloadBrowser };

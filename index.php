@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WP Starter</title>
+    <link rel="stylesheet" href="./frontend/dist/css/core.css" />
 </head>
 
 <body>
-    <?php echo 'php is running...'; ?>
+
+    <h1>Awesome 🎉 PHP Running</h1>
+
 </body>
 
 </html>

@@ -6,7 +6,7 @@ const paths = {
   online: "./build",
   src: {
     base: "./frontend/src",
-    css: "./frontend/src/scss",
+    scss: "./frontend/src/scss",
     js: "./frontend/src/js",
     img: "./frontend/src/images",
     fonts: "./frontend/src/fonts",

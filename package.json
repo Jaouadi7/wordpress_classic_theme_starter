@@ -6,7 +6,11 @@
     "browser-sync": "^3.0.2",
     "dotenv": "^16.4.5",
     "gulp": "^5.0.0",
-    "gulp-connect-php": "^1.0.3"
+    "gulp-autoprefixer": "8.0.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.77.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

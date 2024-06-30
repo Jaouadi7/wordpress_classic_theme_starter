@@ -1,13 +1,30 @@
-const { watch, parallel } = require("gulp");
-const { startServer, reload } = require("./frontend/gulp/server.cjs");
+//---------------------------------------
+//        INSTALLED NPM PLUGINS       ---
+//---------------------------------------
+const { src, dest, watch, parallel, series, task } = require("gulp");
 
-function dev(cb) {
-  watch(["./**/*.php", "./**/*.html"], { events: "all" }, function (cb) {
-    console.log("watching php & html files");
-    reload();
-    cb();
-  });
+//---------------------------------------
+//        IMPORT REQUIRE FILES        ---
+//---------------------------------------
+const paths = require("./frontend/gulp/paths.cjs");
+const { startServer, reloadBrowser } = require("./frontend/gulp/server.cjs");
+const buildCSS = require("./frontend/gulp/tasks/cssTask.cjs");
 
-  cb();
+//---------------------------------------------
+//   SETUP DEVELOPMENT TASK  ( WATCH TASK)  ---
+//---------------------------------------------
+function dev(done) {
+  watch("./**/*.php", reloadBrowser);
+  watch(
+    `${paths.src.scss}/core.scss`,
+    { events: "change" },
+    series(buildCSS, reloadBrowser),
+  );
+  done();
 }
+
+//--------------------------------------
+//         DEFINE GULP TASKS         ---
+//--------------------------------------
+task("css", buildCSS);
 exports.default = parallel(startServer, dev);

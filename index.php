@@ -11,7 +11,7 @@
 <body>
 
     <h1>Awesome 🎉 PHP Running</h1>
-
+    <script src="./frontend/dist/js/app.bundle.js" defer></script>
 </body>
 
 </html>

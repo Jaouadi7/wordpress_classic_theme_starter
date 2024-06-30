@@ -2,15 +2,19 @@
   "name": "wordpress_classic_theme_starter",
   "module": "index.js",
   "devDependencies": {
+    "@babel/preset-env": "^7.24.7",
     "@types/bun": "latest",
+    "babelify": "^10.0.0",
     "browser-sync": "^3.0.2",
+    "browserify": "^17.0.0",
     "dotenv": "^16.4.5",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "8.0.0",
     "gulp-connect-php": "^1.0.3",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.77.6"
+    "sass": "^1.77.6",
+    "vinyl-source-stream": "^2.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

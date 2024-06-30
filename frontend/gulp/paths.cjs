@@ -7,7 +7,7 @@ const paths = {
   src: {
     base: "./frontend/src",
     scss: "./frontend/src/scss",
-    js: "./frontend/src/js",
+    js: "./frontend/src/scripts",
     img: "./frontend/src/images",
     fonts: "./frontend/src/fonts",
   },

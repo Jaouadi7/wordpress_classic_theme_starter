@@ -9,7 +9,12 @@ const { src, dest, watch, parallel, series, task } = require("gulp");
 const paths = require("./frontend/gulp/paths.cjs");
 const { startServer, reloadBrowser } = require("./frontend/gulp/server.cjs");
 
-const { buildCSS, buildJS, optimizeImages } = require("./frontend/gulp/tasks");
+const {
+  buildCSS,
+  buildJS,
+  optimizeImages,
+  fonts,
+} = require("./frontend/gulp/tasks");
 
 //---------------------------------------------
 //   SETUP DEVELOPMENT TASK  ( WATCH TASK)  ---
@@ -27,6 +32,7 @@ function dev(done) {
     series(buildJS, reloadBrowser),
   );
   watch(`${paths.src.img}/**/*.jpg`, optimizeImages);
+  watch(`${paths.src.fonts}/**/*`, fonts);
   done();
 }
 
@@ -36,4 +42,5 @@ function dev(done) {
 task("css", buildCSS);
 task("js", buildJS);
 task("imgs", optimizeImages);
+task("fonts", fonts);
 exports.default = parallel(startServer, dev);

@@ -20,4 +20,4 @@
 
 #### ⏳ - Add Support Import & use for gulp
 
-#### ⏳ - Add WordPress Core folders & file
+#### ⏳ - Start building WP Theme

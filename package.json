@@ -11,6 +11,8 @@
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "8.0.0",
     "gulp-connect-php": "^1.0.3",
+    "gulp-image": "6.2.1",
+    "gulp-imagemin": "^9.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "sass": "^1.77.6",

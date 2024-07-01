@@ -20,4 +20,4 @@
 
 #### ⏳ - Add Support Import & use for gulp
 
-#### ⏳ - Start building WP Theme
+#### ✅ - Start building WP Theme

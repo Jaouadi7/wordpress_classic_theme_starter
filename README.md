@@ -1,6 +1,6 @@
 # WordPress Classic Theme Starter 🚀
 
-![Screenshot](https://github.com/ci/wordpress_classic_theme_starter/blob/develop/wp-theme/screenshot.png)
+![Screenshot](https://github.com/Jaouadi7/wordpress_classic_theme_starter/blob/develop/wp-theme/screenshot.png)
 
 ## Frontend Tasks
 

@@ -16,7 +16,7 @@
 
 #### ✅ - Fonts Task
 
-#### ⏳ - Assets Task
+#### ✅ - Assets Task
 
 #### ⏳ - Add Support Import & use for gulp
 

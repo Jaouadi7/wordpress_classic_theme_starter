@@ -14,6 +14,7 @@ const {
   buildJS,
   optimizeImages,
   fonts,
+  assets,
 } = require("./frontend/gulp/tasks");
 
 //---------------------------------------------
@@ -43,4 +44,5 @@ task("css", buildCSS);
 task("js", buildJS);
 task("imgs", optimizeImages);
 task("fonts", fonts);
-exports.default = parallel(startServer, dev);
+task("assets", assets);
+exports.default = parallel(startServer, series(assets, dev));

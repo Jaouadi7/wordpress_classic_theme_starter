@@ -1,16 +1,14 @@
 //---------------------------------------
 //        INSTALLED NPM PLUGINS       ---
 //---------------------------------------
-const { src, dest, lastRun } = require("gulp");
-// TODO: THE PLUGIN REQUIRE USE IMPORT [ ecmascript ] INSTEAD OF REQUIRE [ CommonJS]
-// NOTE: I WILL SWITCH TO USING EMCA INSTEAD OF CJS
-// const imagemin = require("gulp-imagemin");
-const imagemin = require("gulp-image");
+import { src, dest, lastRun } from "gulp";
+
+import imagemin from "gulp-imagemin";
 
 //---------------------------------------
 //        IMPORT REQUIRE FILES        ---
 //---------------------------------------
-const paths = require("../paths.cjs");
+import paths from "../paths.mjs";
 
 //---------------------------------------
 //      SETUP OPTIMIZE IMG TASK       ---
@@ -22,4 +20,4 @@ const optimizeImages = (done) => {
   done();
 };
 
-module.exports = optimizeImages;
+export default optimizeImages;

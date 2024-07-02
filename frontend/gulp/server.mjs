@@ -1,12 +1,13 @@
 // LOAD .ENV VARIABLES
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 // SERVER PLUGINS
-const browserSync = require("browser-sync");
-const connect = require("gulp-connect-php");
+import browserSync from "browser-sync";
+import connect from "gulp-connect-php";
 
 // GET PATHS VARIABLES
-const paths = require("./paths.cjs");
+import paths from "./paths.mjs";
 
 // SERVER OPTIONS
 const options = {
@@ -41,4 +42,4 @@ function startServer(done) {
   done();
 }
 
-module.exports = { startServer, reloadBrowser };
+export { startServer, reloadBrowser };

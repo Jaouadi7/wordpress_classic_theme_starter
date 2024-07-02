@@ -1,21 +1,22 @@
 //---------------------------------------
 //        INSTALLED NPM PLUGINS       ---
 //---------------------------------------
-const { src, dest, watch, parallel, series, task } = require("gulp");
+import { watch, parallel, series, task } from "gulp";
 
 //---------------------------------------
 //        IMPORT REQUIRE FILES        ---
 //---------------------------------------
-const paths = require("./frontend/gulp/paths.cjs");
-const { startServer, reloadBrowser } = require("./frontend/gulp/server.cjs");
+import paths from "./frontend/gulp/paths.mjs";
 
-const {
+import { startServer, reloadBrowser } from "./frontend/gulp/server.mjs";
+
+import {
   buildCSS,
   buildJS,
   optimizeImages,
   fonts,
   assets,
-} = require("./frontend/gulp/tasks");
+} from "./frontend/gulp/tasks/index.mjs";
 
 //---------------------------------------------
 //   SETUP DEVELOPMENT TASK  ( WATCH TASK)  ---
@@ -28,7 +29,7 @@ function dev(done) {
     series(buildCSS, reloadBrowser),
   );
   watch(
-    `${paths.src.js}/**/*.cjs`,
+    `${paths.src.js}/**/*.js`,
     { events: "change" },
     series(buildJS, reloadBrowser),
   );
@@ -45,4 +46,5 @@ task("js", buildJS);
 task("imgs", optimizeImages);
 task("fonts", fonts);
 task("assets", assets);
-exports.default = parallel(startServer, series(assets, dev));
+
+export default parallel(startServer, series(assets, dev));

@@ -2,16 +2,16 @@
 // INSTALLED NPM PLUGINS FOR ASSETS TASK  ---
 //-------------------------------------------
 //
-const { src, dest } = require("gulp");
-const merge = require("gulp-merge");
-const sassCompiler = require("sass");
-const gulpSass = require("gulp-sass");
+import { src, dest } from "gulp";
+import merge from "gulp-merge";
+import * as sassCompiler from "sass";
+import gulpSass from "gulp-sass";
 const sass = gulpSass(sassCompiler);
 
 //---------------------------------------
 //        IMPORT REQUIRE FILES        ---
 //---------------------------------------
-const paths = require("../paths.cjs");
+import paths from "../paths.mjs";
 
 //---------------------------------------
 //             ASSETS TASK            ---
@@ -45,4 +45,4 @@ function assets(done) {
   return merge(bulma, lineawesome_css, webfonts, HTML5shiv, respond);
 }
 
-module.exports = assets;
+export default assets;

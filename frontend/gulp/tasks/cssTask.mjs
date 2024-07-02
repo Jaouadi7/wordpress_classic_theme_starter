@@ -1,17 +1,18 @@
 //---------------------------------------
 //        INSTALLED NPM PLUGINS       ---
 //---------------------------------------
-const { src, dest } = require("gulp");
-const sassCompiler = require("sass");
-const gulpSass = require("gulp-sass");
+
+import { src, dest } from "gulp";
+import * as sassCompiler from "sass";
+import gulpSass from "gulp-sass";
 const sass = gulpSass(sassCompiler);
-const autoPrefixer = require("gulp-autoprefixer");
-const sourceMaps = require("gulp-sourcemaps");
+import autoPrefixer from "gulp-autoprefixer";
+import sourceMaps from "gulp-sourcemaps";
 
 //---------------------------------------
 //        IMPORT REQUIRE FILES        ---
 //---------------------------------------
-const paths = require("../paths.cjs");
+import paths from "../paths.mjs";
 
 //--------------------------------------
 //         SETUP CSS TASK            ---
@@ -26,4 +27,4 @@ function buildCSS(done) {
   done();
 }
 
-module.exports = buildCSS;
+export default buildCSS;

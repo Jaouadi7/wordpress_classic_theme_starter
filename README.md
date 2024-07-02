@@ -18,6 +18,6 @@
 
 #### ✅ - Assets Task
 
-#### ⏳ - Add Support Import & use for gulp
+#### ✅ - Add Support Import & use for gulp
 
-#### ⏳ - Add WordPress Core folders & file
+#### ✅ - Add WordPress Core folders & file

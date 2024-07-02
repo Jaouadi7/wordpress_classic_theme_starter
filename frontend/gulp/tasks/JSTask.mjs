@@ -1,23 +1,22 @@
 //---------------------------------------
 //  INSTALLED NPM PLUGINS FOR JS TASK ---
 //---------------------------------------
-const { dest } = require("gulp");
-const browserify = require("browserify");
-const babelify = require("babelify");
-const source = require("vinyl-source-stream");
+import { dest } from "gulp";
+import browserify from "browserify";
+import babelify from "babelify";
+import source from "vinyl-source-stream";
 
 //---------------------------------------
 //        IMPORT REQUIRE FILES        ---
 //---------------------------------------
-const paths = require("../paths.cjs");
+import paths from "../paths.mjs";
 
 //---------------------------------------
 //         SETUP JS TASK              ---
 //---------------------------------------
-
 const buildJS = (done) => {
   browserify({
-    entries: [`${paths.src.js}/app.cjs`],
+    entries: [`${paths.src.js}/app.js`],
     transform: [babelify.configure({ presets: ["@babel/preset-env"] })],
   })
     .bundle()
@@ -26,4 +25,4 @@ const buildJS = (done) => {
   done();
 };
 
-module.exports = buildJS;
+export default buildJS;

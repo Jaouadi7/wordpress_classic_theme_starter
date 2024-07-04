@@ -2,8 +2,8 @@
 
 /**
  *
- * Bootstraps the theme
- * Description: initializes the theme by setting up essential theme classes
+ * Menus File
+ * Description: to register menus items
  * @package wpstartertheme
  *
  */

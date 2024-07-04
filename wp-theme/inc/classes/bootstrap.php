@@ -19,9 +19,8 @@ class Bootstrap
 
     protected function __construct()
     {
-
         // LOAD CLASSES
-
+        Assets::get_instance();
 
         // ADD ACTIONS & FILTERS FUNCTION
         $this->setup_hooks();

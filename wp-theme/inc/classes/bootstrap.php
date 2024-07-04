@@ -21,6 +21,7 @@ class Bootstrap
     {
         // LOAD CLASSES
         Assets::get_instance();
+        Menus::get_instance();
 
         // ADD ACTIONS & FILTERS FUNCTION
         $this->setup_hooks();

@@ -25,6 +25,9 @@ class Bootstrap
         Woocommerce::get_instance();
         Sidebars::get_instance();
         CPT::get_instance();
+        Taxonomy::get_instance();
+
+
 
         // ADD ACTIONS & FILTERS FUNCTION
         $this->setup_hooks();

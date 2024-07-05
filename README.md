@@ -32,7 +32,7 @@
 
 #### ✅ - Woocommerce Class [ Customize Woocommerce features ]
 
-#### ⏳ - Sidebars Class [ Register Sidebars ]
+#### ✅ - Sidebars Class [ Register Sidebars ]
 
 #### ⏳ - CPT Class [ Register Custom Post Types ]
 

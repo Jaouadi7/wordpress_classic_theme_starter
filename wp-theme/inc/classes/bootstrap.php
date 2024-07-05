@@ -24,6 +24,7 @@ class Bootstrap
         Menus::get_instance();
         Woocommerce::get_instance();
         Sidebars::get_instance();
+        CPT::get_instance();
 
         // ADD ACTIONS & FILTERS FUNCTION
         $this->setup_hooks();

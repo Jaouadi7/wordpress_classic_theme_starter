@@ -34,7 +34,7 @@
 
 #### ✅ - Sidebars Class [ Register Sidebars ]
 
-#### ⏳ - CPT Class [ Register Custom Post Types ]
+#### ✅ - CPT Class [ Register Custom Post Types ]
 
 #### ⏳ - Taxonomy Class [ Register Custom Taxonomies ]
 

@@ -36,6 +36,6 @@
 
 #### ✅ - CPT Class [ Register Custom Post Types ]
 
-#### ⏳ - Taxonomy Class [ Register Custom Taxonomies ]
+#### ✅ - Taxonomy Class [ Register Custom Taxonomies ]
 
 #### ⏳ - Metabox Class [ Register Custom metaboxs ]

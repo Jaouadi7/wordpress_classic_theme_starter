@@ -38,4 +38,4 @@
 
 #### ✅ - Taxonomy Class [ Register Custom Taxonomies ]
 
-#### ⏳ - Metabox Class [ Register Custom metaboxs ]
+#### ✅ - Metabox Class [ Register Custom metaboxs ]

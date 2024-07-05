@@ -39,3 +39,5 @@
 #### ✅ - Taxonomy Class [ Register Custom Taxonomies ]
 
 #### ✅ - Metabox Class [ Register Custom metaboxs ]
+
+#### ⏳ - Wordpress Page templates [ Create WP Template pages ]

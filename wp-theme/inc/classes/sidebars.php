@@ -27,7 +27,7 @@ class Sidebars
     {
 
         // ACTIONS & FILTERS
-        do_action('widgets_init', [$this, 'register_theme_sidebars']);
+        add_action('widgets_init', [$this, 'register_theme_sidebars']);
     }
 
     public function register_theme_sidebars()

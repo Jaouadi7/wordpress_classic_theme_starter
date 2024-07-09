@@ -40,4 +40,8 @@
 
 #### ✅ - Metabox Class [ Register Custom metaboxs ]
 
-#### ⏳ - Wordpress Page templates [ Create WP Template pages ]
+#### ✅ - Wordpress Page templates [ Create WP Template pages ]
+
+#### ✅ - Widgets Class [ build custom widgets ]
+
+#### ⏳ - Bulma Pagination [ Build Custom pagination using bulma ]

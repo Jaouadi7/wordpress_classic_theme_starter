@@ -24,6 +24,7 @@ class Bootstrap
         Menus::get_instance();
         Woocommerce::get_instance();
         Sidebars::get_instance();
+        Widgets::get_instance();
         CPT::get_instance();
         Taxonomies::get_instance();
         Metaboxs::get_instance();

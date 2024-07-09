@@ -47,6 +47,11 @@ function autoloader($resource = '')
                 $file_name = trim(strtolower($path[2]));
                 break;
 
+            case 'widgets':
+                $directory = 'widgets';
+                $file_name = trim(strtolower($path[2]));
+                break;
+
             default:
                 $directory = 'classes';
                 $file_name = trim(strtolower($path[2]));

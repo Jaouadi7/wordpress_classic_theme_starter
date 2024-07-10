@@ -35,10 +35,12 @@ class Assets
     {
 
         wp_register_style('bulma', THEME_CSS_DIR . '/assets/bulma.css', [], false, 'all');
+        wp_register_style('poppins', THEME_FONTS_DIR . '/poppins/fonts.css', [], false, 'all');
         wp_register_style('lineawesome', THEME_FONTS_DIR . '/lineawesome/all.css', [], false, 'all');
         wp_register_style('core', THEME_CSS_DIR . '/core.css', ['bulma'], filemtime(THEME_CSS_DIR . '/core.css'), 'all');
 
         wp_enqueue_style('bulma');
+        wp_enqueue_style('poppins');
         wp_enqueue_style('lineawesome');
         wp_enqueue_style('core');
     }

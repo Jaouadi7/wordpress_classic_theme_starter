@@ -25,6 +25,7 @@ class Bootstrap
         Woocommerce::get_instance();
         Sidebars::get_instance();
         Widgets::get_instance();
+        Patterns::get_instance();
         CPT::get_instance();
         Taxonomies::get_instance();
         Metaboxs::get_instance();
@@ -51,6 +52,7 @@ class Bootstrap
         add_theme_support('customize-selective-refresh-widgets');
         add_theme_support('automatic-feed-links');
         add_theme_support('html5',  ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script']);
+        add_editor_style(THEME_CSS_DIR . '/editor.css');
         add_theme_support('wp-block-styles');
         add_theme_support('custom-logo', ['header-text' => ['site-title', 'site-description'], 'height' => 'auto', 'width' => '100%', 'flex-height' => true, 'flex-width' => true]);
         add_theme_support('custom-background', ['default-color' => '#FFF', 'default-image' => '', 'default-repeat' => 'no-repeat']);

@@ -9,5 +9,7 @@
 
 get_header();
 
+echo 'Website ready to use!';
+
 
 get_footer();

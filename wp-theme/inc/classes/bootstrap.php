@@ -20,6 +20,7 @@ class Bootstrap
     protected function __construct()
     {
         // LOAD CLASSES
+        Admin::get_instance();
         Assets::get_instance();
         Menus::get_instance();
         Woocommerce::get_instance();
@@ -29,6 +30,7 @@ class Bootstrap
         CPT::get_instance();
         Taxonomies::get_instance();
         Metaboxs::get_instance();
+        Archive_settings::get_instance();
 
         // ADD ACTIONS & FILTERS FUNCTION
         $this->setup_hooks();
@@ -38,7 +40,50 @@ class Bootstrap
     {
 
         // ACTIONS & FILTERS
+        $this->cleanup_wp_installation();
+        $this->fix_wp_issues();
         add_action('after_setup_theme', [$this, 'setup_theme']);
+    }
+
+    // Remove unused wp features
+    public function cleanup_wp_installation()
+    {
+
+        // Remove emoji support
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('wp_print_styles', 'print_emoji_styles');
+
+        // If not need blog feature and remove RSS links
+        remove_action('wp_head', 'feed_links_extra', 3);
+        remove_action('wp_head', 'feed_links', 2);
+
+        // Remove wp-embed
+        add_action('wp_footer', function () {
+            wp_dequeue_script('wp-embed');
+        });
+
+        add_action('wp_enqueue_scripts', function () {
+
+            // Remove block library css
+            wp_dequeue_script('wp-block-library');
+            wp_enqueue_style('comment-reply');
+        });
+
+        // Note: These following lines need put in wp-config.php
+        // define( 'CORE_UPGRADE_SKIP_NEW_BUNDLED', true ); // skip add other wp default themes
+        // define( 'WP_POST_REVISIONS', 5 ); // Set default number revisions for posts
+        //define('EMPTY_TRASH_DAYS', 7); // set number days to automatically empty the trash
+
+    }
+
+    public function fix_wp_issues()
+    {
+
+        // Fix url fuzzy matching for deleting posts
+        add_filter('redirect_cononical', function ($redirect_url) {
+
+            return is_404() ? false : $redirect_url;
+        });
     }
 
     // ADD THEME SUPPORT FEATURES FUNCTION

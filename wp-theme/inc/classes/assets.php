@@ -37,7 +37,7 @@ class Assets
         wp_register_style('bulma', THEME_CSS_DIR . '/assets/bulma.css', [], false, 'all');
         wp_register_style('poppins', THEME_FONTS_DIR . '/poppins/fonts.css', [], false, 'all');
         wp_register_style('lineawesome', THEME_FONTS_DIR . '/lineawesome/all.css', [], false, 'all');
-        wp_register_style('core', THEME_CSS_DIR . '/core.css', ['bulma'], filemtime(THEME_CSS_DIR . '/core.css'), 'all');
+        wp_register_style('core', THEME_CSS_DIR . '/core.css', ['bulma'], filemtime(get_template_directory() . '/frontend/dist/css/core.css'), 'all');
 
         wp_enqueue_style('bulma');
         wp_enqueue_style('poppins');
@@ -48,7 +48,7 @@ class Assets
     public function load_scripts()
     {
 
-        wp_register_script('script', THEME_JS_DIR . '/app.js', [], filemtime(THEME_JS_DIR . '/app.js'), 'all');
+        wp_register_script('script', THEME_JS_DIR . '/app.bundle.js', [], filemtime(get_template_directory() . '/frontend/dist/js/app.bundle.js'), 'all');
 
         wp_enqueue_script('script');
 
@@ -62,5 +62,11 @@ class Assets
 
         wp_script_add_data('html5shiv', 'conditional', 'lt IE 9');
         wp_script_add_data('respond', 'conditional', 'lt IE 9');
+
+        wp_localize_script('script', 'siteConfig', [
+
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'ajax_nonce' => wp_create_nonce('loadmore_posts_nounce'),
+        ]);
     }
 }

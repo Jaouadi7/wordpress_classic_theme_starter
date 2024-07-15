@@ -6,14 +6,6 @@ dotenv.config();
 import browserSync from "browser-sync";
 import connect from "gulp-connect-php";
 
-// GET PATHS VARIABLES
-import paths from "./paths.mjs";
-
-// SERVER OPTIONS
-const options = {
-  root: paths.root || "./",
-};
-
 // RELOAD BROWSER
 function reloadBrowser(done) {
   browserSync.reload();
@@ -27,14 +19,13 @@ function startServer(done) {
   connect.server(
     {
       // SERVER OPTIONS
-      base: options.root,
-      stdio: "ignore",
-      bin: process.env.PHP_BIN,
+      port: 8080,
+      keepalive: true,
     },
     function () {
       // USING BROWSERSYNC PLUGIN
       browserSync({
-        proxy: "127.0.0.1:8000",
+        proxy: "http://127.0.0.1:8080/",
       });
     },
   );

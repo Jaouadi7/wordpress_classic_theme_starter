@@ -18,9 +18,9 @@ import paths from "../paths.mjs";
 //---------------------------------------
 function assets(done) {
   // BULMA
-  const bulma = src(`${paths.nodeModules}/bulma/bulma.scss`)
-    .pipe(sass().on("Error", sass.logError))
-    .pipe(dest(`${paths.dist.css}/assets/`));
+  const bulma = src(`${paths.nodeModules}/bulma/css/bulma.css`).pipe(
+    dest(`${paths.dist.css}/assets/`),
+  );
 
   // FONTAWESOME
   const lineawesome_css = src(

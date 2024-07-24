@@ -16,19 +16,12 @@ function reloadBrowser(done) {
 // SETUP DEV SERVER FOR STATIC FRONTEND ASSETS
 function startServer(done) {
   // USING GULP-CONNECT-PHP PLUGIN
-  connect.server(
-    {
-      // SERVER OPTIONS
-      port: 8080,
-      keepalive: true,
-    },
-    function () {
-      // USING BROWSERSYNC PLUGIN
-      browserSync({
-        proxy: "http://127.0.0.1:8080/",
-      });
-    },
-  );
+  connect.server({}, function () {
+    // USING BROWSERSYNC PLUGIN
+    browserSync({
+      proxy: process.env.SITE_URL,
+    });
+  });
 
   done();
 }

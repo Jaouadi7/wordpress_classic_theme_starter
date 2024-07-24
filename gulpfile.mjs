@@ -46,6 +46,6 @@ task("js", buildJS);
 task("imgs", optimizeImages);
 task("fonts", fonts);
 task("assets", assets);
-task("watch", parallel(startServer, series(assets, dev)));
+task("watch", parallel(startServer, series(buildCSS, buildJS, assets, dev)));
 
-export default parallel(startServer, series(assets, dev));
+export default parallel(startServer, series(buildCSS, buildJS, assets, dev));

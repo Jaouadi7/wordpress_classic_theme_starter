@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WP Starter</title>
-    <link rel="stylesheet" href="./frontend/dist/css/core.css" />
-</head>
+/**
+ * Index File 
+ * @package wpstartertheme
+ *
+ */
 
-<body>
+get_header();
 
-    <h1>Awesome 🎉 PHP Running</h1>
-    <script src="./frontend/dist/js/app.bundle.js" defer></script>
-</body>
 
-</html>
+get_footer();
